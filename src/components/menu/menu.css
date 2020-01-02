@@ -1,0 +1,32 @@
+.ul-menu-1 {
+  padding-right: 1rem;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-transform: uppercase;
+  font-family: "Roboto", sans-serif;
+  font-size: small;
+}
+
+.ul-menu-2 {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.ul-menu-2:hover {
+  text-decoration: underline;
+}
+
+.ul-menu-3 {
+  color: gray;
+  text-decoration: none;
+  font-size: xx-small;
+}
+.ul-menu-3:hover {
+  color: lightgray;
+}
+
+.hide {
+  display: hidden;
+}
