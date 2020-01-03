@@ -1,16 +1,21 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 import "./menu.css";
+import MenuSignedOut from "./MenuSignedOut.jsx";
+import MenuSignedIn from "./MenuSignedIn.jsx";
 
 class Menu extends Component {
+  constructor() {
+    super();
+    this.state = {
+      loggedIn: true
+    };
+  }
+
   render() {
     return (
       <React.Fragment>
-        <ul className="ul-menu-1">
-          <ul className="ul-menu-2">Sign In</ul>
-          <ul className="ul-menu-2">Search</ul>
-          <ul className="ul-menu-2">Feed</ul>
-        </ul>
+        {!this.state.loggedIn ? <MenuSignedOut /> : <MenuSignedIn />}
       </React.Fragment>
     );
   }
