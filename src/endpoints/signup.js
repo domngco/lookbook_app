@@ -2,8 +2,15 @@ let express = require("express");
 let app = express();
 let multer = require("multer");
 let upload = multer({ dest: __dirname + "/uploads/" });
+let authData = require("./authData");
 
-let SignUpEndPoint = app.post("/sign-up", upload.none(), (req, res) => {
+let MongoClient = require("mongodb").MongoClient;
+let dbo = undefined;
+MongoClient.connect(authData.url, { useNewUrlParser: true }, (err, db) => {
+  dbo = db.db(authData.dataBase);
+});
+
+let SignUpFetch = app.post("/sign-up", upload.none(), (req, res) => {
   let _username = req.body.username;
   let _email = req.body.email;
   let _password = req.body.password;
@@ -50,4 +57,4 @@ let SignUpEndPoint = app.post("/sign-up", upload.none(), (req, res) => {
     );
 });
 
-module.exports = SignUpEndPoint;
+module.exports = SignUpFetch;

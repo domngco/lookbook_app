@@ -1,14 +1,14 @@
 import { createStore } from "redux";
 
 let reducer = (state, action) => {
-  if (action.type === "sign_up-successful") {
+  if (action.type === "signup-successful") {
     return {
       ...state,
       loggedIn: true,
       userDetails: action.userDetails
     };
   }
-  if (action.type === "sign_in-successful") {
+  if (action.type === "signin-successful") {
     return {
       ...state,
       loggedIn: true,
