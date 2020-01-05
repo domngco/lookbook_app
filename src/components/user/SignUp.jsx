@@ -52,11 +52,8 @@ export class UnconnectedSignUp extends Component {
       method: "POST",
       body: data
     });
-    console.log("response", response);
     let responseBody = await response.text();
-    console.log("responseBody", responseBody);
     let body = JSON.parse(responseBody);
-    console.log("body", body);
     if (!body.success) {
       alert(body.message);
       return;

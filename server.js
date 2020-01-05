@@ -3,6 +3,7 @@ let app = express();
 let cookieParser = require("cookie-parser");
 let reloadMagic = require("./reload-magic.js");
 let SignUpFetch = require("./src/endpoints/signup");
+let SignInFetch = require("./src/endpoints/signin");
 
 reloadMagic(app);
 
@@ -13,6 +14,7 @@ app.use("/", express.static("public"));
 // Sign Up EndPoint //
 
 app.use(SignUpFetch);
+app.use(SignInFetch);
 
 // *************** //
 

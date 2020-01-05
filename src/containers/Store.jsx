@@ -17,7 +17,7 @@ let reducer = (state, action) => {
   }
 };
 
-let Store = createStore(
+const store = createStore(
   reducer,
   {
     loggedIn: false,
@@ -26,4 +26,4 @@ let Store = createStore(
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
-export default Store;
+export default store;
