@@ -10,13 +10,8 @@ reloadMagic(app);
 app.use(cookieParser());
 app.use("/", express.static("build"));
 app.use("/", express.static("public"));
-
-// Sign Up EndPoint //
-
 app.use(SignUpFetch);
 app.use(SignInFetch);
-
-// *************** //
 
 app.all("/*", (req, res, next) => {
   // needed for react router

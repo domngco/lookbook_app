@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 import SignIn from "../user/SignIn.jsx";
 import SignUp from "../user/SignUp.jsx";
+import CreateLookbook from "../content/create-lookbook/CreateLookbook.jsx";
 
 export class Content extends Component {
   render() {
@@ -14,7 +15,11 @@ export class Content extends Component {
           <Route exact={true} path="/search" />
           <Route exact={true} path="/feed" />
           <Route exact={true} path="/archives" />
-          <Route exact={true} path="/create-lookbook" />
+          <Route
+            exact={true}
+            path="/create-lookbook"
+            component={CreateLookbook}
+          />
         </Switch>
       </React.Fragment>
     );

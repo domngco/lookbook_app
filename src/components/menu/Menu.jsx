@@ -4,21 +4,28 @@ import "./menu.css";
 import MenuSignedOut from "./MenuSignedOut.jsx";
 import MenuSignedIn from "./MenuSignedIn.jsx";
 
-class Menu extends Component {
-  constructor() {
-    super();
+class UnconnectedMenu extends Component {
+  constructor(props) {
+    super(props);
     this.state = {
-      loggedIn: false
+      hidden: true
     };
   }
 
   render() {
     return (
       <React.Fragment>
-        {!this.state.loggedIn ? <MenuSignedOut /> : <MenuSignedIn />}
+        {!this.props.loggedIn ? <MenuSignedOut /> : <MenuSignedIn />}
       </React.Fragment>
     );
   }
 }
 
+let mapStateToProps = state => {
+  return {
+    loggedIn: state.loggedIn
+  };
+};
+
+let Menu = connect(mapStateToProps)(UnconnectedMenu);
 export default Menu;

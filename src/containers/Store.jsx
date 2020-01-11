@@ -15,6 +15,7 @@ let reducer = (state, action) => {
       userDetails: action.userDetails
     };
   }
+  return state;
 };
 
 const store = createStore(
