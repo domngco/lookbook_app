@@ -3,5 +3,8 @@
         "lookbook",
         "signin",
         "signup"
+    ],
+    "cSpell.words": [
+        "dropzone"
     ]
 }
